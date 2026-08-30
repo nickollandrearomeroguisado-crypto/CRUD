@@ -2,6 +2,7 @@
     require './db/funciones.php';
 
     $usuarios = obtener_usuarios();
+    $addUser = create_user();
 
     // var_dump(mysqli_fetch_assoc($usuarios));
 
@@ -38,25 +39,42 @@
             </tr>
 
             <?php
-                }
-
-                if (isset($_POST['agregar'])) {
-                    create_user($_POST['ID'], $_POST['Nombre'], $_POST['Apellido']);
-                }
-                    
+                }  
             ?>
 
         </tbody>
     </table>
-    <form method= "POST">
+
+    <?php
+    if ($addUser) {
+        foreach ($addUser as $error) {
+            echo "<p> .$error. </p>";
+        }
+    }
+    ?>
+
+    <form action="" method= "POST">
+        <label for="cedula">Cédula:</label>
+        <input type="text" name="Cedula" id="">
+    
         <label for="name">Nombre:</label>
         <input type="text" name="Nombre" id="name">
 
-        <label for="">Apellido:</label>
+        <label for="name">Apellido:</label>
         <input type="text" name="Apellido" id="last name">
 
-        <input type="text" name="ID" placeholder="Id_Usuario">
-        
+        <label for="email">Email:</label>
+        <input type="email" name="Email" id="email">
+
+        <label for="password">Contraseña:</label>
+        <input type="password" name="Password" id="password">
+
+        <label for="password">Confirmar Contraseña:</label>
+        <input type="password" name="c_password" id="c_password">
+
+        <label for="telefono">Telefono:</label>
+        <input type="number" name="Telefono" id="telefono">
+
         <input type="submit" name="agregar" value="Agregar">
     </form>
 </body>
