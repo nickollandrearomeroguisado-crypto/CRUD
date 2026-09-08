@@ -38,7 +38,7 @@ function obtener_usuarios() {
     }
 }
 
-// insertar_usuarios(); //string $Cedula, string $Nombre, string $Apellido, string $Email, string $Password, string $Telefono, string $c_password
+// insertar_usuarios(); 
 
 function create_user() {
     require 'conexion.php';

@@ -1,11 +1,46 @@
 <?php
     require './db/funciones.php';
-
+    
     $usuarios = obtener_usuarios();
     $addUser = create_user();
 
     // var_dump(mysqli_fetch_assoc($usuarios));
+    if (isset($_POST['validar-usuario'])) {
+        require './db/conexion.php';
+        
+        $userForm = $_POST['dni-form'];
+        $pwForm = $_POST['pw-form'];
+        $userDB = "";
+        $pwDB = "";
 
+        $query = "SELECT * FROM Usuario WHERE cedula = '{$userForm}';";
+        // var_dump($query);
+        $usuarios = mysqli_query($conex, $query);
+        // var_dump($usuarios);
+
+        // foreach ($usuarios as $data) {
+        //     var_dump($data); 
+        // }
+
+        // exit;
+        if ($usuarios-> num_rows > 0) {
+            foreach ($usuarios as $usuario) {
+                $userDB = $usuario['Cedula'];
+                $pwDB = $usuario['Password'];
+            }
+            $autenticado = password_verify($pwForm, $pwDB); //identifica si la contraseña esta en la bases de datos
+            if ($userForm === $userDB && $autenticado) {
+                echo "Usuario autenticado con éxito";
+            } else {
+                echo "Usuario o contraseña incorrectos";
+            }
+            // var_dump($autenticado);
+            // exit;
+            // echo "validamos usuario";
+        } else {
+            echo "Usuario o contraseña incorrectos";
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -16,6 +51,14 @@
     <title>Ejemplo conexión DB</title>
 </head>
 <body>
+    <form action="" method="POST">
+        <label for="dni-form">Cédula</label>
+        <input type="number" name="dni-form">
+        <label for="pw-form">Contraseña</label>
+        <input type="password" name="pw-form">
+
+        <input type="submit" value="Enviar" name="validar-usuario">
+    </form>
     <h1>Conexión con MySqli</h1>
     <table>
         <thead>

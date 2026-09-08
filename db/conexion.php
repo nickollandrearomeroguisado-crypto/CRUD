@@ -2,7 +2,7 @@
 
 $hostname = "localhost";
 $username = "root";
-$password = "Sena2026*";
+$password = "1234";
 $database = "Ejemplo";
 
 $conex = mysqli_connect($hostname, $username, $password, $database);
