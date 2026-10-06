@@ -29,7 +29,7 @@ require '../../db/conexion.php';
         $query = "DELETE FROM Usuario WHERE ID = ".$id.";";
         $resultado = mysqli_query($conex, $query);
         
-        $msg1= ($resultado) ? "Elimincación con éxito" : "Error al hacer la eliminación";
+        $msg1= ($resultado) ? "Eliminación con éxito" : "Error al hacer la eliminación";
         $state = ($resultado) ? 4 : 5;
         header("Location: ../../pag/users.php?state=$state, msg=" .$msg1);
 

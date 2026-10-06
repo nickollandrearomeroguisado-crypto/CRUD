@@ -19,10 +19,10 @@
         <input type="number" name="id_salida" id="id_salida"><br>
 
         <label for="fecha">Fecha:</label>
-        <input type="text" name="fecha" id="fecha"><br>
+        <input type="date" name="fecha" id="fecha"><br>
 
         <label for="hora">Hora:</label>
-        <input type="text" name="hora" id="hora"><br>
+        <input type="time" name="hora" id="hora"><br>
 
         <label for="destino">Destino:</label>
         <input type="text" name="destino" id="destino"><br>

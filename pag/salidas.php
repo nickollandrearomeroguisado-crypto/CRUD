@@ -36,8 +36,8 @@
                     <td><?php echo $exit['hora'] ?></td>
                     <td><?php echo $exit['destino'] ?></td>
                     <td>
-                        <a href="">Actualizar</a>
-                        <a href="">Eliminar</a>
+                        <a href="../formSalida/formUpdate.php?id=<?php echo $exit['id'] ?>">Actualizar</a>
+                        <a href="../includes/salidas/delete.php?id=<?php echo $exit['id']; ?>" onclick="return confirm('¿Estás seguro de eliminar este registro');">Eliminar</a>
                     </td>
                 </tr>
 

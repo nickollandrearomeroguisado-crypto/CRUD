@@ -15,6 +15,10 @@ function create_exit() {
         $hora = mysqli_real_escape_string($conex, $_POST['hora'] ?? '');
         $destino = mysqli_real_escape_string($conex, $_POST['destino'] ?? '');
 
+        if (!$id_salida) {
+            $errores[] = "Ingrese el id de salidas";
+        }
+        
         if (!$fecha) {
             $errores[] = "Ingrese la fecha";
         }
@@ -27,7 +31,7 @@ function create_exit() {
             $errores[] = "Ingrese su destino";
         }
 
-        $query = "SELECT * FROM Salidas WHERE id_salida = ".$id_salida.";";
+        $query = "SELECT * FROM Salidas WHERE id_salida = '".$id_salida."';";
         // var_dump($query);
         // exit;
         $resultado = mysqli_query($conex, $query);
@@ -37,7 +41,7 @@ function create_exit() {
         }
 
         if (!$errores) {
-            $query = "INSERT INTO Salidas(id_salida, fecha, hora, destino) VALUES ('".$id_salida."', '".$fecha."', '".$hora."', '".$destino."';";
+            $query = "INSERT INTO Salidas(id_salida, fecha, hora, destino) VALUES ('".$id_salida."', '".$fecha."', '".$hora."', '".$destino."');";
             $resultado = mysqli_query($conex, $query);
 
             $msg1 = ($resultado) ? "Salida agregada con éxito" : "Error al agregar salida";
