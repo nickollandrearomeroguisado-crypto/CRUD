@@ -57,7 +57,7 @@ function create_client() {
             $msg1 = ($resultado) ? "Cliente agregado con éxito" : "Error al agregar cliente";
             $message = ($resultado) ? 6 : 7;
 
-            header("Location: ../pag/cliente.php?state=$message, msg=" . $msg1);
+            header("Location: ../pag/cliente.php?state=$message msg=$msg1");
         } else {
 
         }

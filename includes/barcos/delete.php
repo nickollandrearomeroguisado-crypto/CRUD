@@ -23,7 +23,7 @@ if (!$errores) {
 
     $msg1 = ($resultado) ? "Eliminación con éxito" : "Error al hacer la elimiinación";
     $state = ($resultado) ? 16 : 17;
-    header("Location: ../../pag/barcos.php?state=$state, msg=" .$msg1);
+    header("Location: ../../pag/barcos.php?state=$state msg=$msg1");
 
 } else {
 

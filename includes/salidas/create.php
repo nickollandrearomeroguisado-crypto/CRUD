@@ -46,7 +46,7 @@ function create_exit() {
 
             $msg1 = ($resultado) ? "Salida agregada con éxito" : "Error al agregar salida";
             $message = ($resultado) ? 18 : 19;
-            header("Location: ../pag/salidas.php?state=$message, msg=" .$msg1);
+            header("Location: ../pag/salidas.php?state=$message msg=$msg1");
         } else {
 
         }

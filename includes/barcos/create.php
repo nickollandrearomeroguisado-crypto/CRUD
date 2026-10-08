@@ -45,7 +45,7 @@ function create_boat() {
             $msg1 = ($resultado) ? "Barco agregado con éxito" : "Error al agregar barco";
             $message = ($resultado) ? 12 : 13;
 
-            header("Location: ../pag/barcos.php?state=$message, msg=" .$msg1);
+            header("Location: ../pag/barcos.php?state=$message msg=$msg1");
 
         } else {
 

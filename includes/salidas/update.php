@@ -38,7 +38,7 @@ function update_exit() {
 
             $msg1 = ($resultado) ? "Actualización agregada con éxito" : "Error al hacer la actualización";
             $message = ($resultado) ? 20 : 21;
-            header("Location: ../pag/salidas.php?state=$message, msg=" .$msg1);
+            header("Location: ../pag/salidas.php?state=$message msg=$msg1");
         } else {
 
         }

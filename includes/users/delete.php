@@ -31,7 +31,7 @@ require '../../db/conexion.php';
         
         $msg1= ($resultado) ? "Eliminación con éxito" : "Error al hacer la eliminación";
         $state = ($resultado) ? 4 : 5;
-        header("Location: ../../pag/users.php?state=$state, msg=" .$msg1);
+        header("Location: ../../pag/users.php?state=$state msg=$msg1");
 
         // if ($resultado) {
             //     // header('Location: ../pag/user.php?state=4');

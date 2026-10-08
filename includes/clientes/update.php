@@ -51,7 +51,7 @@ function update_client() {
             $msg1 = ($resultado) ? "Actualización agregada con éxito" : "Error al hacer la actualización";
             $message = ($resultado) ? 8 : 9;
 
-            header("Location: ../pag/cliente.php?state=$message, msg=" .$msg1);
+            header("Location: ../pag/cliente.php?state=$message msg=$msg1");
 
         } else {
 

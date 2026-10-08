@@ -99,7 +99,7 @@ function update_user() {
                 $msg1= ($resultado) ? "Actualización agregada con éxito" : "Error al hacer la actualización";
                 $message = ($resultado) ? 2 : 3;
 
-                header("Location: ../pag/user.php?state=$message, msg=" .$msg1);
+                header("Location: ../pag/user.php?state=$message msg=$msg1");
                 // if ($resultado) {
                 //     header('Location: ../pag/user.php?state=2');
                 //     echo "Actualización agregada con éxito";

@@ -28,7 +28,7 @@ if (!$errores) {
     
     $msg1 = ($resultado) ? "Eliminación con éxito" : "Error al hacer la eliminación";
     $state = ($resultado) ? 10 : 11;
-    header("Location: ../../pad/cliente.php?state=$state, msg=" .$msg1);
+    header("Location: ../../pad/cliente.php?state=$state msg=$msg1");
 
 } else {
 

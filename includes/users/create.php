@@ -37,7 +37,7 @@ function create_user() {
         }
 
         if (!$Nombre) {
-            $errores[] = "Ingrese un nombre";
+            $errores[] = "Ingrese un nombre"; //nos muestra el mensaje de error si el campo esta vacio
         }
 
         if (!$Apellido) {
@@ -55,7 +55,7 @@ function create_user() {
         if ($Password != $c_password) {
             $errores[] = "Las contraseñas no coinciden";
         } else {
-            $Password = password_hash($Password, PASSWORD_BCRYPT);
+            $Password = password_hash($Password, PASSWORD_BCRYPT); //sirve para que no muestre la contraseña ingresada
         }
 
         if (!$Telefono) {
@@ -82,7 +82,7 @@ function create_user() {
             $msg1= ($resultado) ? "Usuario agregado con éxito" : "Error al agregar usuario";
             $message = ($resultado) ? 0 : 1;
 
-            header("Location: ../pag/user.php?state=$message, msg=" .$msg1);
+            header("Location: ../pag/user.php?state=$message msg=$msg1");
             // if ($resultado) {
             //     // header('Location: ../pag/user.php?state=0');
             //     echo "Usuario agregado con éxito";
